@@ -2,19 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_ui/common/theme_helper.dart';
-import 'package:flutter_login_ui/pages/menu2.dart';
+import 'package:flutter_login_ui/pages/stopwatch.dart';
 
 import 'profile_page.dart';
 import 'widgets/header_widget.dart';
 
-class MenuPage2 extends StatefulWidget {
+class StopwatchPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _MenuPage2();
+    return _StopwatchPage();
   }
 }
 
-class _MenuPage2 extends State<MenuPage2> {
+class _StopwatchPage extends State<StopwatchPage> {
   double _drawerIconSize = 24;
   double _drawerFontSize = 17;
   double _headerHeight = 250;
@@ -37,7 +37,7 @@ class _MenuPage2 extends State<MenuPage2> {
       ),
       appBar: AppBar(
         title: Text(
-          "Beranda",
+          "Data Kelompok",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         elevation: 0.5,
@@ -66,8 +66,25 @@ class _MenuPage2 extends State<MenuPage2> {
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 60,
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(width: 5, color: Colors.white),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 20,
+                          offset: const Offset(5, 5),
+                        ),
+                      ],
+                    ),
+                    child: Icon(
+                      Icons.person,
+                      size: 80,
+                      color: Colors.grey.shade300,
+                    ),
                   ),
                   SizedBox(
                     height: 20,
@@ -84,7 +101,7 @@ class _MenuPage2 extends State<MenuPage2> {
                               style: TextStyle(
                                   fontSize: 30, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(height: 20.0),
+                            SizedBox(height: 10.0),
                             Form(
                                 key: _formKey,
                                 child: Column(
@@ -112,7 +129,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                     MenuPage2()));
+                                                      StopwatchPage()));
                                         },
                                       ),
                                     ),
@@ -139,7 +156,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      MenuPage2()));
+                                                      StopwatchPage()));
                                         },
                                       ),
                                     ),
@@ -166,7 +183,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      MenuPage2()));
+                                                      StopwatchPage()));
                                         },
                                       ),
                                     ),
@@ -193,7 +210,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      MenuPage2()));
+                                                      StopwatchPage()));
                                         },
                                       ),
                                     ),

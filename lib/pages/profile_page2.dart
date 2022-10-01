@@ -21,6 +21,40 @@ class _ProfilePage2State extends State<ProfilePage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Data Kelompok",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        elevation: 0.5,
+        iconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                    Theme.of(context).primaryColor,
+                    Theme.of(context).accentColor,
+                  ])),
+        ),
+      ),
+      // drawer: Drawer(
+      //   child: Container(
+      //     decoration: BoxDecoration(
+      //         gradient: LinearGradient(
+      //             begin: Alignment.topLeft,
+      //             end: Alignment.bottomRight,
+      //             stops: [
+      //               0.0,
+      //               1.0
+      //             ],
+      //             colors: [
+      //               Theme.of(context).primaryColor.withOpacity(0.2),
+      //               Theme.of(context).accentColor.withOpacity(0.5),
+      //             ])),
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -77,7 +111,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                       children: <Widget>[
                         Container(
                           padding:
-                              const EdgeInsets.only(left: 8.0, bottom: 4.0),
+                          const EdgeInsets.only(left: 8.0, bottom: 4.0),
                           alignment: Alignment.topCenter,
                           child: Text(
                             "Anggota Kelompok",
