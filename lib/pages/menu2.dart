@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_ui/common/theme_helper.dart';
+import 'package:flutter_login_ui/pages/login_page.dart';
 import 'package:flutter_login_ui/pages/menu2.dart';
+import 'package:flutter_login_ui/pages/profile_page2.dart';
 
 import 'profile_page.dart';
 import 'widgets/header_widget.dart';
@@ -112,7 +114,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                     MenuPage2()));
+                                                     ProfilePage2()));
                                         },
                                       ),
                                     ),
@@ -193,7 +195,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      MenuPage2()));
+                                                      LoginPage()));
                                         },
                                       ),
                                     ),

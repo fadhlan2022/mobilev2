@@ -21,6 +21,18 @@ class _ProfilePage2State extends State<ProfilePage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Beranda',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.lightbulb),
+            label: 'Bantuan',
+          ),
+        ],
+      ),
       appBar: AppBar(
         title: Text(
           "Data Kelompok",
@@ -39,22 +51,6 @@ class _ProfilePage2State extends State<ProfilePage2> {
                   ])),
         ),
       ),
-      // drawer: Drawer(
-      //   child: Container(
-      //     decoration: BoxDecoration(
-      //         gradient: LinearGradient(
-      //             begin: Alignment.topLeft,
-      //             end: Alignment.bottomRight,
-      //             stops: [
-      //               0.0,
-      //               1.0
-      //             ],
-      //             colors: [
-      //               Theme.of(context).primaryColor.withOpacity(0.2),
-      //               Theme.of(context).accentColor.withOpacity(0.5),
-      //             ])),
-      //   ),
-      // ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
