@@ -1,13 +1,15 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_ui/common/theme_helper.dart';
+import 'package:flutter_login_ui/pages/hobby.dart';
 import 'package:flutter_login_ui/pages/login_page.dart';
 import 'package:flutter_login_ui/pages/menu2.dart';
 import 'package:flutter_login_ui/pages/profile_page2.dart';
-
-import 'profile_page.dart';
 import 'widgets/header_widget.dart';
+import 'package:flutter_login_ui/pages/hobby.dart';
+import 'package:flutter_login_ui/pages/stopwatch.dart';
 
 class MenuPage2 extends StatefulWidget {
   @override
@@ -21,41 +23,12 @@ class _MenuPage2 extends State<MenuPage2> {
   double _drawerFontSize = 17;
   double _headerHeight = 250;
   Key _formKey = GlobalKey<FormState>();
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Beranda',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.lightbulb),
-            label: 'Bantuan',
-          ),
-        ],
-      ),
-      appBar: AppBar(
-        title: Text(
-          "Beranda",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        elevation: 0.5,
-        iconTheme: IconThemeData(color: Colors.white),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Theme.of(context).primaryColor,
-                    Theme.of(context).accentColor,
-                  ])),
-        ),
-      ),
-      body: SingleChildScrollView(
+    List<Widget> widgets = [
+      SingleChildScrollView(
         child: Stack(
           children: [
             Container(
@@ -110,11 +83,11 @@ class _MenuPage2 extends State<MenuPage2> {
                                           ),
                                         ),
                                         onPressed: () {
-                                          Navigator.pushReplacement(
+                                          Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                     ProfilePage2()));
+                                                      ProfilePage2()));
                                         },
                                       ),
                                     ),
@@ -137,11 +110,11 @@ class _MenuPage2 extends State<MenuPage2> {
                                           ),
                                         ),
                                         onPressed: () {
-                                          Navigator.pushReplacement(
+                                          Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      MenuPage2()));
+                                                      StopwatchPage()));
                                         },
                                       ),
                                     ),
@@ -164,11 +137,11 @@ class _MenuPage2 extends State<MenuPage2> {
                                           ),
                                         ),
                                         onPressed: () {
-                                          Navigator.pushReplacement(
+                                          Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      MenuPage2()));
+                                                      HobbyPage()));
                                         },
                                       ),
                                     ),
@@ -191,7 +164,7 @@ class _MenuPage2 extends State<MenuPage2> {
                                           ),
                                         ),
                                         onPressed: () {
-                                          Navigator.pushReplacement(
+                                          Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
@@ -210,6 +183,57 @@ class _MenuPage2 extends State<MenuPage2> {
           ],
         ),
 
+      ),
+    ListTile(
+      title: Text(
+        "Bantuan",
+        style: TextStyle(fontSize: 22, color: Colors.black87, fontWeight: FontWeight.bold),
+      ),
+    subtitle: Text("\n "
+        "Cara Menggunakan Aplikasi : \n"
+        "   1. Silahkan login sebelum menggunakan aplikasi \n"
+        "   2. Masukkan username dan password yang sudah \n "
+        "      terdaftar"
+        "   3. Pilih menu yang anda butuhkan pada beranda \n"
+        "   4. Keterangan Menu : \n"
+        "        *) Menu Daftar Anggota berisi daftar anggota \n "
+        "           kelompok 7 \n"
+        "        *) Menu Stopwatch berisi fitur stopwatch \n"
+        "        *) Menu Daftar Hobby berisi daftar hobi anggota \n"
+        "           kelompok 7 \n"
+        "        *) Sign Out Bergungsu untuk keluar dari akun yang \n "
+        "           terhubung \n"
+        "   5. Fitur Bantuan berfungsi untuk menampilkan bantuan \n "
+        "      seputar penggunaan aplikasi"),
+    ),
+    ];
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0.5,
+        iconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                    Theme.of(context).primaryColor,
+                    Theme.of(context).accentColor,
+                  ])),
+        ),
+      ),
+      body: widgets [currentIndex],
+      bottomNavigationBar: ConvexAppBar(
+        items: [
+          TabItem(icon: Icons.home, title: 'Beranda'),
+          TabItem(icon: Icons.lightbulb, title: 'Bantuan'),
+        ],
+        initialActiveIndex: 0,
+        onTap: (int i){
+          setState(() {
+            currentIndex = i;
+          });
+        },
       ),
     );
   }

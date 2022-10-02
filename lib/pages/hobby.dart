@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_login_ui/pages/widgets/header_widget.dart';
 
-class ProfilePage2 extends StatefulWidget {
+class HobbyPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _ProfilePage2State();
+    return _HobbyPageState();
   }
 }
 
-class _ProfilePage2State extends State<ProfilePage2> {
+class _HobbyPageState extends State<HobbyPage> {
   double _drawerIconSize = 24;
   double _drawerFontSize = 17;
 
@@ -19,7 +19,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Data Kelompok",
+          "Daftar Hobby",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         elevation: 0.5,
@@ -71,16 +71,8 @@ class _ProfilePage2State extends State<ProfilePage2> {
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    'Kelompok 7',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
                   SizedBox(
                     height: 20,
-                  ),
-                  Text(
-                    'Pemrograman Aplikasi Mobil SI-C',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
@@ -94,14 +86,13 @@ class _ProfilePage2State extends State<ProfilePage2> {
                           const EdgeInsets.only(left: 8.0, bottom: 4.0),
                           alignment: Alignment.topCenter,
                           child: Text(
-                            "Anggota Kelompok",
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
+                            "Daftar Hobby Anggota",
+                            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.left,
                           ),
+                        ),
+                        SizedBox(
+                          height: 20,
                         ),
                         Card(
                           child: Container(
@@ -117,12 +108,12 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                         ListTile(
                                           leading: Icon(Icons.person),
                                           title: Text("Fadhlan Hisyam"),
-                                          subtitle: Text("124200022"),
+                                          subtitle: Text("Hobi: Nonton Film"),
                                         ),
                                         ListTile(
                                           leading: Icon(Icons.person),
                                           title: Text("Nafal Adi SL"),
-                                          subtitle: Text("124200025"),
+                                          subtitle: Text("Hobi: Hunting Kuliner"),
                                         ),
                                       ],
                                     ),
