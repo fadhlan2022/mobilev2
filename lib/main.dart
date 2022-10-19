@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-import 'pages/splash_screen.dart';
+import 'pages/menu.dart';
 
 void main() {
-  runApp(LoginUiApp());
+  runApp(MyApp());
 }
 
-class LoginUiApp extends StatelessWidget {
-  Color _primaryColor = HexColor('#DC54FE');
-  Color _accentColor = HexColor('#8A02AE');
+class MyApp extends StatelessWidget {
+  Color _primaryColor = HexColor('#00baff');
+  Color _accentColor = HexColor('#45c5ff');
 
   // Design color
   // Color _primaryColor= HexColor('#FFC867');
@@ -28,14 +27,14 @@ class LoginUiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Kelompok 7',
+      title: 'UTS 124200025',
       theme: ThemeData(
         primaryColor: _primaryColor,
         accentColor: _accentColor,
         scaffoldBackgroundColor: Colors.grey.shade100,
         primarySwatch: Colors.grey,
       ),
-      home: SplashScreen(title: 'Kelompok 7'),
+      home: MenuPage(),
     );
   }
 }
